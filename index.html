@@ -12,15 +12,39 @@
     <header>
         <nav>
             <img src="./logo.png" alt="logo">
-            <img id="burgermenu" src="./burger.png" alt="burgermenu">
-            <ul>
-                <li><a href="#">Lista</a></li>
+            <i id="burgermenu" class="fa-solid fa-bars"></i>
+            <ul class="menu">
+                <li><a href="./index.html">Lista</a></li>
                 <li><a href="./sorteio.html">Sorteio</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <h1 style="margin-top: 1rem; text-align: center;">Bagres</h1>
+        <div class="container">
+            <form action="">
+                <input type="text" name="nome" id="inputnome" placeholder="Nome do Bagre">
+                <input type="range" name="bagrometro" id="bagrometro" min="0" max="3">
+                <input type="submit" value="Cadastrar">
+            </form>
+            <div class="lista">
+                <div class="tituloslista">
+                    <p>Nome do Jogador</p>
+                    <div class="bagretier"></div>
+                    <p class="pixtitle">Pix</p>
+                </div>
+                <div class="jogador">
+                    <p>NomedoJogador</p>
+                    <div class="bagretier"></div>
+                    <input type="checkbox" name="pagou" id="pixzin">
+                </div>
+                <div class="jogador">
+                    <p>NomedoJogador</p>
+                    <div class="bagretier"></div>
+                    <input type="checkbox" name="pagou" id="pixzin">
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 

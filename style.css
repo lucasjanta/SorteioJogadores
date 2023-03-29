@@ -7,15 +7,103 @@
     text-decoration: none;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 2rem auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.lista{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    background-color: beige;
+}
+
+.jogador{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.jogador p{
+    width: 60%;
+    border-right: 1px solid black;
+}
+
+.jogador p{
+    width: 60%;
+    border-right: 1px solid black;
+}
+
+.jogador .bagretier{
+    width: 35%;
+    border-right: 1px solid black;
+}
+
+.tituloslista{
+    border-bottom: 1px solid black;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
 @media screen and (max-width: 600px) {
     nav{
         display: flex;
         justify-content: space-between;
+        padding: 1rem;
     }
     nav ul{
         position: absolute;
         right: 0;
         display: none;
+    }
+    #burgermenu{
+        font-size: 2rem;
+    }
+
+    .menu ul{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu li{
+        background-color: beige;
+        border: 1px solid black;
+        padding: 1rem;
+        
+    }
+
+    .menu a{
+        
+    }
+
+    .menu li:hover a{
+        background-color: black;
+        color: white;
+    }
+
+    .menu li:hover{
+        background-color: black;
+        color: white;
+    }
+
+
+    .activestatus{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 4rem;
+        list-style: none;
+        font-size: 1.5rem;
     }
 }
 
@@ -24,6 +112,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-top: 2rem;
     }
 
     nav ul{
