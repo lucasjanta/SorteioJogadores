@@ -25,17 +25,17 @@
     <main>
         <h1 style="margin-top: 1rem; text-align: center;">Bagres</h1>
         <div class="container">
-            <form action="">
-                <input type="text" name="nome" id="inputnome" placeholder="Nome do Bagre">
-                <input type="range" name="bagrometro" id="bagrometro" min="0" max="3">
+            <form id="formbagre" action="">
+                <input type="text" name="nome" id="inputnome" placeholder="Nome do Bagre" required>
+                <input type="range" name="bagrometro" id="inputtier" min="0" max="3">
                 <input type="submit" value="Cadastrar">
             </form>
+            <div class="lista">
+                <h1>Jogador</h1>
+                <p>Tier</p>
+                <p>Pix</p>
+                </div>
             <div class="gridplayers">
-                <div class="lista">
-                    <h1>Jogador</h1>
-                    <p>Tier</p>
-                    <p>Pix</p>
-                    </div>
                 <div class="player">
                     <h1>Lucas</h1>
                     <div class="pontuacao"></div>
@@ -68,7 +68,7 @@
 
 
 
-    <script src="./code.js"></script>
+    <script src="./codigo.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 </body>
 </html>
