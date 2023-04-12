@@ -17,13 +17,7 @@
     gap: 2rem;
 }
 
-.lista{
-    display: flex;
-    width: 90%;
-    align-items: center;
-    flex-direction: column;
-    background-color: beige;
-}
+
 
 form{
     width: 50%;
@@ -87,7 +81,30 @@ form input[type=submit]{
     display: flex;
     flex-direction: row;
     width: 80vw;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: beige;
+}
+
+.jogadortitulo{
+    width: 40%;
+}
+
+.tiertitulo{
+    width: 20%;
+}
+
+.pixtitulo{
+    width: 20%;
+}
+
+.editardeletartitulo{
+    width: 20%;
+}
+
+.titulos{
+    text-align: center;
+    border-left: 1px solid black;
+    padding: 1rem 0;
 }
 
 @media screen and (max-width: 600px) {

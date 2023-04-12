@@ -1,12 +1,11 @@
-// Verifica se já existe um array de jogadores no localStorage
-let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
-
 // Seleciona os elementos do DOM
 const nameInput = document.querySelector('#inputnome');
 const tierInput = document.querySelector('#inputtier');
 const form = document.querySelector('form');
-// Seleciona o elemento .gridplayers no DOM
 const gridPlayers = document.querySelector('.gridplayers');
+
+// Verifica se já existe um array de jogadores no localStorage
+let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 
 // Função para adicionar um novo jogador ao array
 function addPlayer(name, tier) {
@@ -33,9 +32,9 @@ function renderPlayers() {
       newPlayer.appendChild(playerName);
       
       // Adiciona a pontuação do jogador
-      const playerScore = document.createElement('div');
-      playerScore.classList.add('pontuacao');
-      newPlayer.appendChild(playerScore);
+      const playerTier = document.createElement('div');
+      playerTier.classList.add('pontuacao');
+      newPlayer.appendChild(playerTier);
       
       // Adiciona o checkbox do jogador
       const playerCheckbox = document.createElement('input');
