@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/73880ad22b.js" crossorigin="anonymous"></script>
+    <title>BagreBall</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./logo.png" alt="logo">
+            <i id="burgermenu" class="fa-solid fa-bars"></i>
+            <ul class="menu">
+                <li><a href="./index.html">Lista</a></li>
+                <li><a href="./sorteio.html">Sorteio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="margin-top: 1rem; text-align: center;">Sorteio de Bagres</h1>
+        <form id="formsorteio" action="">
+            <div class="inputssorteio">
+                <div class="inputssorteiodiv">
+                    <label for="numjogadores">Jogadores por Time:</label>
+                    <input type="number" name="numerojogadores" id="numerojogadores" min="0">
+                </div>
+                <div class="inputssorteiodiv">
+                    <label for="numtimes">Número de Times:</label>
+                    <input type="number" name="numerotimes" id="numerotimes" min="0">
+                </div>
+                <input type="submit" value="Sortear">
+            </div>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+
+    <script src="./codigo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</body>
+</html>

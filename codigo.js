@@ -3,7 +3,6 @@ const nameInput = document.querySelector('#inputnome');
 const tierInput = document.querySelector('#inputtier');
 const form = document.querySelector('form');
 const gridPlayers = document.querySelector('.gridplayers');
-
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 
@@ -33,6 +32,7 @@ function renderPlayers() {
       
       // Adiciona a pontuação do jogador
       const playerTier = document.createElement('p');
+      playerTier.classList.add('tier');
       playerTier.textContent = player.tier;
       newPlayer.appendChild(playerTier);
       
@@ -49,6 +49,7 @@ function renderPlayers() {
     
       const playerEditButton = document.createElement('button');
       playerEditButton.textContent = 'Editar';
+      playerEditButton.classList.add('editbutton');
       playerEditButton.addEventListener('click', () => {
         editPlayer(index);
       });
@@ -56,6 +57,7 @@ function renderPlayers() {
   
       const playerDeleteButton = document.createElement('button');
       playerDeleteButton.textContent = 'Excluir';
+      playerDeleteButton.classList.add('deletebutton');
       playerDeleteButton.addEventListener('click', () => {
         deletePlayer(index);
       });

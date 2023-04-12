@@ -225,6 +225,67 @@ form input[type=submit]{
     border-radius: 50px;
 }
 
+.tier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editbutton{
+width: 30%;
+}
+
+.deletebutton{
+    width: 30%;
+}
+
+.divform{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#inputtier{
+    width: 40%;
+    
+}
+
+#submitjogador{
+    width: 25%;
+}
+
+#formsorteio{
+   width: 50vw;
+   margin: 3rem auto;
+   display: flex;
+   align-items: center;
+}
+
+#numerojogadores{
+    height: 3rem;
+    width: 3rem;
+}
+
+#numerotimes{
+    height: 3rem;
+    width: 3rem;
+}
+
+.inputssorteio{
+    display: flex;
+    gap: 1rem;
+    background-color: antiquewhite;
+    padding: 1rem;
+}
+
+.inputssorteiodiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     nav{
         display: flex;
