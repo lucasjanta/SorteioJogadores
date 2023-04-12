@@ -17,8 +17,6 @@
     gap: 2rem;
 }
 
-
-
 form{
     width: 50%;
     display: flex;
@@ -66,8 +64,13 @@ form input[type=submit]{
 
 .gridplayers{
     display: grid;
-    grid-template-columns: 70% 15% 15%;
+    grid-template-columns: 40% 20% 20% 20%;
     grid-auto-rows: minmax(1rem, auto);
+}
+
+
+.player:nth-of-type(odd){
+    background-color: beige;
 }
 
 .player{
@@ -75,6 +78,28 @@ form input[type=submit]{
     display: flex;
     justify-content: space-around;
     grid-column: 1/3;
+}
+
+.player h1{
+    width: 40%;
+    text-align: center;
+}
+
+.player p{
+    width: 20%;
+    text-align: center;
+}
+
+.player input{
+    width: 20%;
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    width: 20%;
+    text-align: center;
+    justify-content: space-evenly;
 }
 
 .lista{

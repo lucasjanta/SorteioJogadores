@@ -32,8 +32,8 @@ function renderPlayers() {
       newPlayer.appendChild(playerName);
       
       // Adiciona a pontuação do jogador
-      const playerTier = document.createElement('div');
-      playerTier.classList.add('pontuacao');
+      const playerTier = document.createElement('p');
+      playerTier.textContent = player.tier;
       newPlayer.appendChild(playerTier);
       
       // Adiciona o checkbox do jogador
@@ -42,20 +42,24 @@ function renderPlayers() {
       playerCheckbox.setAttribute('name', player.nome);
       playerCheckbox.setAttribute('id', player.nome.toLowerCase());
       newPlayer.appendChild(playerCheckbox);
-  
+
+      const playerbuttons = document.createElement('div');
+      playerbuttons.classList.add('buttons');
+      newPlayer.appendChild(playerbuttons);
+    
       const playerEditButton = document.createElement('button');
       playerEditButton.textContent = 'Editar';
       playerEditButton.addEventListener('click', () => {
         editPlayer(index);
       });
-      newPlayer.appendChild(playerEditButton);
+      playerbuttons.appendChild(playerEditButton);
   
       const playerDeleteButton = document.createElement('button');
       playerDeleteButton.textContent = 'Excluir';
       playerDeleteButton.addEventListener('click', () => {
         deletePlayer(index);
       });
-      newPlayer.appendChild(playerDeleteButton);
+      playerbuttons.appendChild(playerDeleteButton);
   
       
       // Adiciona o novo jogador à lista
