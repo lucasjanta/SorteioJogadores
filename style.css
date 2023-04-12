@@ -81,7 +81,7 @@ form input[type=submit]{
 }
 
 .player h1{
-    width: 40%;
+    width: 30%;
     text-align: center;
 }
 
@@ -97,7 +97,7 @@ form input[type=submit]{
 
 .buttons{
     display: flex;
-    width: 20%;
+    width: 30%;
     text-align: center;
     justify-content: space-evenly;
 }
@@ -111,7 +111,7 @@ form input[type=submit]{
 }
 
 .jogadortitulo{
-    width: 40%;
+    width: 30%;
 }
 
 .tiertitulo{
@@ -123,13 +123,106 @@ form input[type=submit]{
 }
 
 .editardeletartitulo{
-    width: 20%;
+    width: 30%;
+    text-align: center;
 }
 
 .titulos{
-    text-align: center;
+    display: flex;
+    align-items: center;
     border-left: 1px solid black;
     padding: 1rem 0;
+    justify-content: center;
+}
+
+.infos{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    justify-content: space-between;
+}
+
+.numerojogadores{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    padding: 1rem
+}
+
+.numerojogadores span{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.numerojogadores p{
+    background-color: black;
+    padding: 1rem;
+    color: white;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 50px;
+}
+
+.valordopix{
+    width: 33%;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: bisque;
+    padding: 1rem
+}
+
+#valorpix{
+    width: 3rem;
+    height: 1.6rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#submitvalorpix{
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 0.6rem;
+}
+
+.pixzada{
+    display: flex;
+    align-items: center;
+}
+.pixzada label{
+    font-size: 1.3rem;
+}
+
+.valortotal{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    padding: 1rem
+}
+
+.valortotal span{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.valortotal p{
+    background-color: black;
+    padding: 1rem;
+    color: white;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 50px;
 }
 
 @media screen and (max-width: 600px) {

@@ -40,7 +40,7 @@ function renderPlayers() {
       const playerCheckbox = document.createElement('input');
       playerCheckbox.setAttribute('type', 'checkbox');
       playerCheckbox.setAttribute('name', player.nome);
-      playerCheckbox.setAttribute('id', player.nome.toLowerCase());
+      /* playerCheckbox.setAttribute('id', player.nome.toLowerCase()); */
       newPlayer.appendChild(playerCheckbox);
 
       const playerbuttons = document.createElement('div');
