@@ -255,27 +255,31 @@ width: 30%;
 }
 
 #formsorteio{
-   width: 50vw;
+    display: flex;
+   width: 25vw;
+   padding: 1rem;
    margin: 3rem auto;
-   display: flex;
    align-items: center;
+   
 }
 
 #numerojogadores{
     height: 3rem;
-    width: 3rem;
+    width: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 #numerotimes{
     height: 3rem;
-    width: 3rem;
+    width: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 .inputssorteio{
     display: flex;
-    gap: 1rem;
-    background-color: antiquewhite;
-    padding: 1rem;
+    gap: 5rem;
 }
 
 .inputssorteiodiv{
