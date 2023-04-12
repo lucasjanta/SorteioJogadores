@@ -6,6 +6,8 @@ const gridPlayers = document.querySelector('.gridplayers');
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 
+
+window.onload = renderPlayers();
 // Função para adicionar um novo jogador ao array
 function addPlayer(name, tier) {
   const player = { nome: name, tier: tier };
@@ -114,9 +116,3 @@ const deletePlayer = index => {
     // Renderiza a lista de jogadores atualizada
     renderPlayers();
   }
-
-
-
-
-
-// Função para renderizar a lista de jogadores
