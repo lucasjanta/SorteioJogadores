@@ -290,6 +290,30 @@ width: 30%;
     text-align: center;
 }
 
+.listasorteada{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.times{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10rem;
+    background-color: beige;
+    padding: 2rem;
+}
+
+.listaTime{
+    display: flex;
+    width: 90%;
+    min-height: 3rem;
+    background-color: yellow;
+}
+
 @media screen and (max-width: 600px) {
     nav{
         display: flex;

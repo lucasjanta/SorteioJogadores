@@ -1,11 +1,10 @@
 // Seleciona os elementos do DOM
 const nameInput = document.querySelector('#inputnome');
 const tierInput = document.querySelector('#inputtier');
-const form = document.querySelector('form');
+const formbagres = document.querySelector('#formbagre');
 const gridPlayers = document.querySelector('.gridplayers');
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
-
 
 window.onload = renderPlayers();
 // Função para adicionar um novo jogador ao array
@@ -80,7 +79,7 @@ function renderPlayers() {
   }
 
 // Adiciona um evento de submissão ao formulário
-form.addEventListener('submit', function(event) {
+formbagres.addEventListener('submit', function(event) {
   event.preventDefault(); // impede o envio do formulário
   addPlayer(nameInput.value, tierInput.value);
   nameInput.value = ''; // Limpa o input do nome
@@ -116,3 +115,31 @@ const deletePlayer = index => {
     // Renderiza a lista de jogadores atualizada
     renderPlayers();
   }
+
+  const numeroJogadores = document.querySelector('#numerojogadores');
+  const numeroTimes = document.querySelector('#numerotimes');
+  const formsorteio = document.querySelector('#formsorteio');
+
+
+  var lt1 = document.querySelector('.lt1');
+  var lt2 = document.querySelector('.lt2');
+  var lt3 = document.querySelector('.lt3');
+  var lt4 = document.querySelector('.lt4');
+
+  function sortearJogadores(numjogadores, numtimes) {
+    let team1 = [];
+    let team2 = [];
+    let team3 = [];
+    let team4 = [];
+
+    console.log(playersArray)
+    /* var sorteioteste = (numjogadores, numtimes) => {
+      
+    } */
+  }
+
+  // Adiciona um evento de submissão ao formulário
+formsorteio.addEventListener('submit', function(event) {
+  event.preventDefault(); // impede o envio do formulário
+  sortearJogadores(numeroJogadores.value, numeroTimes.value);
+});
