@@ -3,6 +3,11 @@ const nameInput = document.querySelector('#inputnome');
 const tierInput = document.querySelector('#inputtier');
 const formbagres = document.querySelector('#formbagre');
 const gridPlayers = document.querySelector('.gridplayers');
+const totalJogadores = document.querySelector('.valorjogadorestotal');
+const totalPix = document.querySelector('.valortotalpix');
+var pagantes = 10;
+var valorPix = 8;
+
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 
@@ -41,7 +46,7 @@ function renderPlayers() {
       const playerCheckbox = document.createElement('input');
       playerCheckbox.setAttribute('type', 'checkbox');
       playerCheckbox.setAttribute('name', player.nome);
-      /* playerCheckbox.setAttribute('id', player.nome.toLowerCase()); */
+      playerCheckbox.setAttribute('class', 'checkboxjogadores');
       newPlayer.appendChild(playerCheckbox);
 
       const playerbuttons = document.createElement('div');
@@ -67,8 +72,14 @@ function renderPlayers() {
       
       // Adiciona o novo jogador à lista
       gridPlayers.appendChild(newPlayer);
+      
+      totalJogadores.innerHTML = playersArray.length;
+
+      totalPix.innerHTML = "R$" + pagantes + "(total: R$" + valorPix * playersArray.length + ")";
     });
   }
+  
+
   
   // Chame a função renderPlayers() sempre que um novo jogador for adicionado
   function addPlayer(name, tier) {
