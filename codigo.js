@@ -5,8 +5,8 @@ const formbagres = document.querySelector('#formbagre');
 const gridPlayers = document.querySelector('.gridplayers');
 const totalJogadores = document.querySelector('.valorjogadorestotal');
 const totalPix = document.querySelector('.valortotalpix');
-var pagantes = 10;
-var valorPix = 8;
+const atualizarvalor = document.querySelector('#submitvalorpix');
+var pagantes = 0;
 
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
@@ -14,7 +14,7 @@ let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 window.onload = renderPlayers();
 // Função para adicionar um novo jogador ao array
 function addPlayer(name, tier) {
-  const player = { nome: name, tier: tier };
+  const player = { nome: name, tier: tier, playerCheckbox: false };
   playersArray.push(player);
   localStorage.setItem('playersArray', JSON.stringify(playersArray));
 }
@@ -43,11 +43,16 @@ function renderPlayers() {
       newPlayer.appendChild(playerTier);
       
       // Adiciona o checkbox do jogador
-      const playerCheckbox = document.createElement('input');
-      playerCheckbox.setAttribute('type', 'checkbox');
-      playerCheckbox.setAttribute('name', player.nome);
-      playerCheckbox.setAttribute('class', 'checkboxjogadores');
-      newPlayer.appendChild(playerCheckbox);
+      const playerCheckboxInput = document.createElement('input');
+      playerCheckboxInput.setAttribute('type', 'checkbox');
+      playerCheckboxInput.setAttribute('name', player.nome);
+      playerCheckboxInput.setAttribute('class', 'checkboxjogadores');
+      if (player.playerCheckbox) {
+        playerCheckboxInput.setAttribute('checked', 'checked');
+      } else if (player.playerCheckbox == false) {
+        playerCheckboxInput.removeAttribute('checked');}
+
+      newPlayer.appendChild(playerCheckboxInput);
 
       const playerbuttons = document.createElement('div');
       playerbuttons.classList.add('buttons');
@@ -72,22 +77,20 @@ function renderPlayers() {
       
       // Adiciona o novo jogador à lista
       gridPlayers.appendChild(newPlayer);
-      
-      totalJogadores.innerHTML = playersArray.length;
 
-      totalPix.innerHTML = "R$" + pagantes + "(total: R$" + valorPix * playersArray.length + ")";
+      totalJogadores.innerHTML = playersArray.length;
     });
   }
-  
-
-  
-  // Chame a função renderPlayers() sempre que um novo jogador for adicionado
-  function addPlayer(name, tier) {
-    const player = { nome: name, tier: tier };
-    playersArray.push(player);
-    localStorage.setItem('playersArray', JSON.stringify(playersArray));
-    renderPlayers();
+    
+  function atualizarpixviacheckbox() {
+    
   }
+  atualizarvalor.addEventListener('click', () => {
+    const checadas = document.querySelectorAll('input[type="checkbox"]:checked');
+    pagantes = checadas.length;
+    var valorPix = document.querySelector('#valorpix').value;
+    totalPix.innerHTML = "R$" + pagantes * valorPix + "(total: R$" + valorPix * playersArray.length + ")";
+  })
 
 // Adiciona um evento de submissão ao formulário
 formbagres.addEventListener('submit', function(event) {
@@ -95,7 +98,23 @@ formbagres.addEventListener('submit', function(event) {
   addPlayer(nameInput.value, tierInput.value);
   nameInput.value = ''; // Limpa o input do nome
   tierInput.value = ''; // Limpa o input do tier
+  renderPlayers();
+  const listacheckboxes = document.querySelectorAll('.checkboxjogadores');
+  for (let i = 0; i < listacheckboxes.length; i++) {
+    const checkboxAtual = listacheckboxes[i];
+    checkboxAtual.addEventListener('change', () => {
+      if (checkboxAtual.checked) {
+        getPlayerByName(checkboxAtual.name).playerCheckbox = true;
+        console.log(checkboxAtual.name);
+      } else {
+        getPlayerByName(checkboxAtual.name).playerCheckbox = false;
+        console.log(checkboxAtual.name);
+      }
+    })
+  }
 });
+
+function getPlayerByName(name) { for (let i = 0; i < playersArray.length; i++) { if (playersArray[i].nome === name) { return playersArray[i]; } } return null;}
 
 
 const editPlayer = index => {
