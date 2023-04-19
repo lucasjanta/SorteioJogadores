@@ -107,7 +107,7 @@ function atualizapix() {
   }
 }
     
-  atualizarvalor.addEventListener('click', () => {
+atualizarvalor.addEventListener('click', () => {
     /* checadas = document.querySelectorAll('input[type="checkbox"]:checked');
     pagantes = checadas.length; */
     valorPix = document.querySelector('#valorpix').value;
@@ -124,7 +124,10 @@ formbagres.addEventListener('submit', function(event) {
   atualizapix()
 });
 
-function getPlayerByName(name) { for (let i = 0; i < playersArray.length; i++) { if (playersArray[i].nome === name) { return playersArray[i]; } } return null;}
+
+function getPlayerByName(name) {
+  return playersArray.find(player => player.nome === name) || null;
+}
 
 
 const editPlayer = index => {
