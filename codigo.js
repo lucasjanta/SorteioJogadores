@@ -6,6 +6,8 @@ const gridPlayers = document.querySelector('.gridplayers');
 const totalJogadores = document.querySelector('.valorjogadorestotal');
 const totalPix = document.querySelector('.valortotalpix');
 const atualizarvalor = document.querySelector('#submitvalorpix');
+var checadas = document.querySelectorAll('input[type="checkbox"]:checked');
+var valorPix = document.querySelector('#valorpix').value;
 var pagantes = 0;
 
 // Verifica se já existe um array de jogadores no localStorage
@@ -81,14 +83,34 @@ function renderPlayers() {
       totalJogadores.innerHTML = playersArray.length;
     });
   }
-    
-  function atualizarpixviacheckbox() {
-    
+
+function atualizapix() {
+  var listacheckboxes = document.querySelectorAll('.checkboxjogadores');
+  for (let i = 0; i < listacheckboxes.length; i++) {
+    listacheckboxes[i].addEventListener('change', () => {
+      if (listacheckboxes[i].checked == true) {
+        
+        getPlayerByName(listacheckboxes[i].name).playerCheckbox = true;
+        checadas = document.querySelectorAll('input[type="checkbox"]:checked');
+        pagantes = checadas.length;
+        totalPix.innerHTML = "R$" + pagantes * valorPix + "(total: R$" + valorPix * playersArray.length + ")";
+        console.log(getPlayerByName(listacheckboxes[i].name))
+      } else if(listacheckboxes[i].checked == false){
+        
+        getPlayerByName(listacheckboxes[i].name).playerCheckbox = false;
+        checadas = document.querySelectorAll('input[type="checkbox"]:checked');
+        pagantes = checadas.length;
+        totalPix.innerHTML = "R$" + pagantes * valorPix + "(total: R$" + valorPix * playersArray.length + ")";
+        console.log(getPlayerByName(listacheckboxes[i].name))
+      }
+    })
   }
+}
+    
   atualizarvalor.addEventListener('click', () => {
-    const checadas = document.querySelectorAll('input[type="checkbox"]:checked');
-    pagantes = checadas.length;
-    var valorPix = document.querySelector('#valorpix').value;
+    /* checadas = document.querySelectorAll('input[type="checkbox"]:checked');
+    pagantes = checadas.length; */
+    valorPix = document.querySelector('#valorpix').value;
     totalPix.innerHTML = "R$" + pagantes * valorPix + "(total: R$" + valorPix * playersArray.length + ")";
   })
 
@@ -99,19 +121,7 @@ formbagres.addEventListener('submit', function(event) {
   nameInput.value = ''; // Limpa o input do nome
   tierInput.value = ''; // Limpa o input do tier
   renderPlayers();
-  const listacheckboxes = document.querySelectorAll('.checkboxjogadores');
-  for (let i = 0; i < listacheckboxes.length; i++) {
-    const checkboxAtual = listacheckboxes[i];
-    checkboxAtual.addEventListener('change', () => {
-      if (checkboxAtual.checked) {
-        getPlayerByName(checkboxAtual.name).playerCheckbox = true;
-        console.log(checkboxAtual.name);
-      } else {
-        getPlayerByName(checkboxAtual.name).playerCheckbox = false;
-        console.log(checkboxAtual.name);
-      }
-    })
-  }
+  atualizapix()
 });
 
 function getPlayerByName(name) { for (let i = 0; i < playersArray.length; i++) { if (playersArray[i].nome === name) { return playersArray[i]; } } return null;}
