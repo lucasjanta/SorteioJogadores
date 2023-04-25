@@ -158,31 +158,3 @@ const deletePlayer = index => {
     // Renderiza a lista de jogadores atualizada
     renderPlayers();
   }
-
-  const numeroJogadores = document.querySelector('#numerojogadores');
-  const numeroTimes = document.querySelector('#numerotimes');
-  const formsorteio = document.querySelector('#formsorteio');
-
-
-  var lt1 = document.querySelector('.lt1');
-  var lt2 = document.querySelector('.lt2');
-  var lt3 = document.querySelector('.lt3');
-  var lt4 = document.querySelector('.lt4');
-
-  function sortearJogadores(numjogadores, numtimes) {
-    let team1 = [];
-    let team2 = [];
-    let team3 = [];
-    let team4 = [];
-
-    console.log(playersArray)
-    /* var sorteioteste = (numjogadores, numtimes) => {
-      
-    } */
-  }
-
-  // Adiciona um evento de submissão ao formulário
-formsorteio.addEventListener('submit', function(event) {
-  event.preventDefault(); // impede o envio do formulário
-  sortearJogadores(numeroJogadores.value, numeroTimes.value);
-});
