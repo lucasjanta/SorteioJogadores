@@ -10,10 +10,82 @@ var lt1 = document.querySelector('.lt1');
 var lt2 = document.querySelector('.lt2');
 var lt3 = document.querySelector('.lt3');
 var lt4 = document.querySelector('.lt4');
-
 function sortearJogadores(numjogadores, numtimes) {
 
-    const jogadoresPorTier = {};
+console.log(arrayJogadores);
+
+for (let i = 0; i < arrayJogadores.length; i++) {
+  const player = arrayJogadores[i];
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CÓDIGO PADRÃO DE SORTEIO FUNCIONANDO APENAS ATÉ O TERCEIRO JOGADOR SORTEADO
+
+
+
+
+
+
+
+
+
+
+
+
+    /* const jogadoresPorTier = {};
     
     playersArray.forEach(jogador => {
         const { tier } = jogador;
@@ -33,7 +105,6 @@ function sortearJogadores(numjogadores, numtimes) {
         time.push(jogadorsorteadotier3);
         time.push(jogadorsorteadotier2);
         time.push(jogadorsorteadotier1);
-        time.push(sortearJogadorSobra());
       }
 
       function tirarDoArrayAux(){
@@ -54,13 +125,6 @@ function sortearJogadores(numjogadores, numtimes) {
                 jogadoresPorTier[3].splice(i, 1);
                 break;
               }}
-
-              for (let i = 0; i < jogadoresPorTier.length; i++) {
-                for (let u = 0; u < jogadoresPorTier[i].length; u++) {
-                  if (jogadoresPorTier[i][u].id === jogadorextra.id && jogadoresPorTier[i][u].nome === jogadorextra.nome) {
-                    jogadoresPorTier[i].splice(u, 1);
-                    break;
-                }}}
               
       }
 
@@ -68,10 +132,6 @@ function sortearJogadores(numjogadores, numtimes) {
         jogadorsorteadotier1 = sortearJogadordoTier(1);
         jogadorsorteadotier2 = sortearJogadordoTier(2);
         jogadorsorteadotier3 = sortearJogadordoTier(3);
-      }
-
-      function sortearJogadorSobra(){
-        return sortearJogadordoTier(Math.ceil(Math.random() * 3));
       }
 
       var jogadorsorteadotier1 = sortearJogadordoTier(1);
@@ -85,12 +145,8 @@ function sortearJogadores(numjogadores, numtimes) {
         let team2 = [];
 
         if (numjogadores == 4) {
-          var jogadorextra = sortearJogadorSobra();
           mandaparaotime(team1);
           tirarDoArrayAux();
-          console.log(team1);
-          console.log(team2);
-          console.log(jogadoresPorTier);
           sorteardenovo();
           mandaparaotime(team2);
           tirarDoArrayAux();
@@ -116,7 +172,7 @@ function sortearJogadores(numjogadores, numtimes) {
         let team3 = [];
         let team4 = [];
       }
-      
+       */
 
 
 
