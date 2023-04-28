@@ -12,7 +12,7 @@ function sortearJogadores(numjogadores) {
 
 arrayJogadores = playersArray;
 //Define o número de times
-var numtimes = Math.floor(arrayJogadores.length / numjogadores);
+var numtimes = Math.round(arrayJogadores.length / numjogadores);
 
 //Cria os arrays para cada time
 if (numtimes == 2) {
