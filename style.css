@@ -361,6 +361,81 @@ width: 30%;
         list-style: none;
         font-size: 1.5rem;
     }
+
+    #formbagre{
+        width: 90%;
+    }
+
+    .container{
+        width: 95vw;
+    }
+
+    .lista{
+        width: 100%;
+    }
+
+    .gridplayers{
+        width: 100%;
+    }
+
+    .player{
+        width: 95vw;
+        padding: 0.5rem 0;
+    }
+
+    .player h1{
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+    .editbutton{
+        width: 45%;
+    }
+
+    .deletebutton{
+        width: 45%;
+    }
+
+    #submitjogador{
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
+    .infos{
+        display: flex;
+        flex-direction: column;
+        width: 95vw;
+    }
+
+    .numerojogadores{
+        width: 100%;
+    }
+
+    .valordopix{
+        width: 100%;
+    }
+
+    .valortotal{
+        width: 100%;
+        text-align: center;
+    }
+
+    .listasorteada{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .times{
+        height: fit-content;
+        padding: 1rem;
+    }
+
+    .listaTime{
+        background-color: white;
+    }
+
+    
+
 }
 
 @media screen and (min-width: 600px) {

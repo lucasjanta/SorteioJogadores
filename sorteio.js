@@ -1,3 +1,5 @@
+const burgermenu = document.querySelector('#burgermenu');
+const menushow = document.querySelector('.menu');
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 const numeroJogadores = document.querySelector('#numerojogadores');
 const formsorteio = document.querySelector('#formsorteio');
@@ -8,6 +10,9 @@ var lt2 = document.querySelector('.lt2');
 var lt3 = document.querySelector('.lt3');
 var lt4 = document.querySelector('.lt4');
 
+burgermenu.addEventListener('click', () => {
+  menushow.classList.toggle('activestatus');
+})
 function sortearJogadores(numjogadores) {
 
 arrayJogadores = playersArray;
@@ -29,6 +34,9 @@ if (numtimes == 2) {
 
 
 for(let i = 0; i < numtimes; i++) {
+  if(arrayJogadores.length == 0){
+    break;
+  }
   let tierjogador = 3;
   for (let u = 0; u < numjogadores; u++) {
       var jogadoraleatorio = Math.floor(Math.random() * arrayJogadores.length);
@@ -41,6 +49,9 @@ for(let i = 0; i < numtimes; i++) {
       tierjogador--;
       if(tierjogador == 0){
         tierjogador = 3;
+      }
+      if(arrayJogadores.length == 0){
+        break;
       }
     }
   }

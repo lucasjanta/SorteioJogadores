@@ -1,4 +1,6 @@
 // Seleciona os elementos do DOM
+const burgermenu = document.querySelector('#burgermenu');
+const menushow = document.querySelector('.menu');
 const nameInput = document.querySelector('#inputnome');
 const tierInput = document.querySelector('#inputtier');
 const formbagres = document.querySelector('#formbagre');
@@ -9,6 +11,10 @@ const atualizarvalor = document.querySelector('#submitvalorpix');
 var checadas = document.querySelectorAll('input[type="checkbox"]:checked');
 var valorPix = document.querySelector('#valorpix').value;
 var pagantes = 0;
+
+burgermenu.addEventListener('click', () => {
+  menushow.classList.toggle('activestatus');
+})
 
 // Verifica se já existe um array de jogadores no localStorage
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
