@@ -12,21 +12,29 @@ function sortearJogadores(numjogadores) {
 
 arrayJogadores = playersArray;
 //Define o número de times
-var numtimes = Math.round(arrayJogadores.length / numjogadores);
+var numtimes = Math.ceil(arrayJogadores.length / numjogadores);
 
 //Cria os arrays para cada time
-if (numtimes == 2) {
-  var times = [[], []]
-} else if (numtimes == 3) {
-  var times = [[], [], []]
-} else if (numtimes == 4) {
-  var times = [[], [], [], []]
-} else if (numtimes == 5) {
-  var times = [[], [], [], [], []]
-} else if (numtimes == 6) {
-  var times = [[], [], [], [], [], []]
+switch (numtimes) {
+  case 1:
+    var times = [[]]
+    break;
+  case 2:
+    var times = [[], []]
+    break;
+  case 3:
+    var times = [[], [], []]
+    break;
+  case 4:
+    var times = [[], [], [], []]
+    break;
+  case 5:
+    var times = [[], [], [], [], []]
+    break;
+  case 6:
+    var times = [[], [], [], [], [], []]
+    break;
 }
-
 
 for(let i = 0; i < numtimes; i++) {
   let tierjogador = 3;
