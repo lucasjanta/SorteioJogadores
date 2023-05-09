@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav>
-            <img src="./logo.png" alt="logo">
+            <img id="logo" src="./images/logo.png" alt="logo">
             <img style="width: 2rem;" id="burgermenu" src="./images/menuburger.png" alt="menu">
             <ul class="menu">
                 <li><a href="./index.html">Lista</a></li>
@@ -28,7 +28,7 @@
             <div class="inputssorteio">
                 <div class="inputssorteiodiv">
                     <label for="numjogadores">Jogadores por Time:</label>
-                    <input type="number" name="numerojogadores" id="numerojogadores" min="0">
+                    <input type="number" name="numerojogadores" id="numerojogadores" min="0" required>
                 </div>
             </div>
             <input type="submit" value="Sortear">

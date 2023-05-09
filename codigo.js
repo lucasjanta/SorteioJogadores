@@ -20,6 +20,7 @@ burgermenu.addEventListener('click', () => {
 let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 
 window.onload = renderPlayers();
+window.onload = atualizapix();
 // Função para adicionar um novo jogador ao array
 function addPlayer(name, tier) {
   const player = { nome: name, tier: tier, playerCheckbox: false };
@@ -88,6 +89,7 @@ function renderPlayers() {
 
       totalJogadores.innerHTML = playersArray.length;
     });
+    atualizapix();
   }
 
 function atualizapix() {
