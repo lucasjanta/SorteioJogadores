@@ -279,10 +279,10 @@ width: 30%;
 
 #formsorteio{
     display: flex;
-   width: 25vw;
-   padding: 1rem;
-   margin: 3rem auto;
-   align-items: center;
+    width: 25vw;
+    padding: 1rem;
+    margin: 3rem auto;
+    align-items: center;
    
 }
 
@@ -302,16 +302,20 @@ width: 30%;
 }
 
 .inputssorteio{
+    background-color: var(--cor-accent);
+    padding: 1rem;
+    border-radius: 8px;
     display: flex;
     gap: 5rem;
 }
 
 .inputssorteiodiv{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 1rem;
     text-align: center;
+    text-wrap: nowrap;
 }
 
 .listasorteada{
@@ -340,9 +344,9 @@ width: 30%;
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
     nav{
-        display: flex;
+        display: flex;  
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
@@ -456,6 +460,25 @@ width: 30%;
         height: fit-content;
         padding: 1rem;
     }
+
+    .inputssorteio{
+        background-color: var(--cor-accent);
+        padding: 1rem 4rem;
+        border-radius: 8px;
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+    }
+    
+    .inputssorteiodiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        text-wrap: nowrap;
+    }
+    
 
 }
 
