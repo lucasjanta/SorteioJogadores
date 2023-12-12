@@ -102,6 +102,8 @@ button:hover{
 .gridplayers{
     display: flex;
     flex-direction: column;
+    width: 80%;
+    
 }
 
 
@@ -116,7 +118,7 @@ button:hover{
 .player{
     width: 100%;
     display: grid;
-    grid-template-columns: 50% 25% 25%;
+    grid-template-columns: 50% 15% 35%;
     grid-row: auto;
     padding: 1rem;
     border: 1.4px solid var(--cor-secundaria);
@@ -141,7 +143,8 @@ button:hover{
 
 .lista{
     display: grid;
-    grid-template-columns: 50% 25% 25%;
+    width: 80%;
+    grid-template-columns: 50% 15% 35%;
     grid-row: auto;
     text-align: center;
     background-color: var(--cor-accent);
@@ -265,11 +268,13 @@ width: 30%;
 .divform{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #submitjogador{
-    width: 25%;
+    width: auto;
+    display: flex;
+    border-radius: 8px;
 }
 
 #formsorteio{
@@ -420,7 +425,7 @@ width: 30%;
 
     #submitjogador{
         text-align: center;
-        font-size: 0.6rem;
+        font-size: 1rem;
     }
 
     .infos{
