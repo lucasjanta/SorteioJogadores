@@ -2,7 +2,6 @@
 const burgermenu = document.querySelector('#burgermenu');
 const menushow = document.querySelector('.menu');
 const nameInput = document.querySelector('#inputnome');
-const tierInput = document.querySelector('#inputtier');
 const formbagres = document.querySelector('#formbagre');
 const gridPlayers = document.querySelector('.gridplayers');
 const totalJogadores = document.querySelector('.valorjogadorestotal');
@@ -22,8 +21,8 @@ let playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
 window.onload = renderPlayers();
 window.onload = atualizapix();
 // Função para adicionar um novo jogador ao array
-function addPlayer(name, tier) {
-  const player = { nome: name, tier: tier, playerCheckbox: false };
+function addPlayer(name) {
+  const player = { nome: name, playerCheckbox: false };
   playersArray.push(player);
   localStorage.setItem('playersArray', JSON.stringify(playersArray));
 }
@@ -44,12 +43,6 @@ function renderPlayers() {
       const playerName = document.createElement('h1');
       playerName.textContent = player.nome;
       newPlayer.appendChild(playerName);
-      
-      // Adiciona a pontuação do jogador
-      const playerTier = document.createElement('p');
-      playerTier.classList.add('tier');
-      playerTier.textContent = player.tier;
-      newPlayer.appendChild(playerTier);
       
       // Adiciona o checkbox do jogador
       const playerCheckboxInput = document.createElement('input');
@@ -125,9 +118,8 @@ atualizarvalor.addEventListener('click', () => {
 // Adiciona um evento de submissão ao formulário
 formbagres.addEventListener('submit', function(event) {
   event.preventDefault(); // impede o envio do formulário
-  addPlayer(nameInput.value, tierInput.value);
+  addPlayer(nameInput.value);
   nameInput.value = ''; // Limpa o input do nome
-  tierInput.value = ''; // Limpa o input do tier
   renderPlayers();
   atualizapix()
 });
@@ -139,13 +131,11 @@ function getPlayerByName(name) {
 
 
 const editPlayer = index => {
-    // Pede ao usuário um novo nome e tier para o jogador
+    // Pede ao usuário um novo nome para o jogador
     const newNome = prompt('Digite o novo nome do jogador:');
-    const newTier = prompt('Digite o novo tier do jogador:');
   
     // Atualiza o objeto jogador correspondente no array
     playersArray[index].nome = newNome;
-    playersArray[index].tier = newTier;
   
     // Salva o array de jogadores atualizado no localstorage
     localStorage.setItem('playersArray', JSON.stringify(playersArray));
