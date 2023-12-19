@@ -14,6 +14,7 @@ burgermenu.addEventListener('click', () => {
   menushow.classList.toggle('activestatus');
 })
 function sortearJogadores(numeroJogadores, numeroTimes) {
+  playersArray = JSON.parse(localStorage.getItem('playersArray')) || [];
   var arrayJogadores = [];
   arrayJogadores = playersArray;
 //Define o número de times
